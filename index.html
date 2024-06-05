@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
+    <link rel="stylesheet" href="./css/modal.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      menu classic
+      <nav>
+        <ul>
+          <li><a href="#">Home icon</a></li>
+          <li><button>Add a recipe</button></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Recettes de dessert</h1>
+      <section class="list-and-images">
+        <ul class="list-recettes"></ul>
+        <div class="container-images">carousel de cette recette :</div>
+      </section>
+      <section class="info-recipe">
+        <div class="container-instructions"><h3>Instructions</h3></div>
+        <ul class="container-ingredients"></ul>
+      </section>
+      <button>Add a recipe</button>
+      <div class="modal-add-a-recipe">
+        <form action="GET">
+          <input type="text" name="title" placeholder="Title" />
+          <input type="text" name="image" placeholder="Image" />
+          <input type="text" name="instructions" placeholder="Instructions" />
+          <input type="text" name="ingredients" placeholder="Ingredients" />
+          <input type="submit" value="Add a recipe" />
+        </form>
+      </div>
+    </main>
+    <script src="./js/loader.js"></script>
+    <script src="./js/recettes.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
