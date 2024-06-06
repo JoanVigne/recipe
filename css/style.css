@@ -12,10 +12,17 @@ html {
   color: #333;
 }
 
+button,
+i {
+  cursor: pointer;
+}
 header {
-  background-color: var(--sweet);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   padding: 1rem;
   text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 section {

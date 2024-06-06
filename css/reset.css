@@ -40,6 +40,7 @@ li {
 /* Remove text decoration */
 a {
   text-decoration: none;
+  color: unset;
 }
 
 /* Set default font family and size */

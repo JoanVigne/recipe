@@ -7,20 +7,24 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/loader.css" />
     <link rel="stylesheet" href="./css/modal.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
     <title>Document</title>
   </head>
   <body>
     <header>
-      menu classic
+      <h1>RECIPE</h1>
       <nav>
         <ul>
           <li><a href="#">Home icon</a></li>
-          <li><button>Add a recipe</button></li>
+          <li><button class="open-modal-add-a-recipe">Add a recipe</button></li>
         </ul>
       </nav>
     </header>
     <main>
-      <h1>Recettes de dessert</h1>
+      <h2>Latest</h2>
       <section class="list-and-images">
         <ul class="list-recettes"></ul>
         <div class="container-images">carousel de cette recette :</div>
@@ -29,19 +33,50 @@
         <div class="container-instructions"><h3>Instructions</h3></div>
         <ul class="container-ingredients"></ul>
       </section>
-      <button>Add a recipe</button>
+      <button class="open-modal-add-a-recipe">Add a recipe</button>
+      <!-- MODAL -->
       <div class="modal-add-a-recipe">
-        <form action="GET">
-          <input type="text" name="title" placeholder="Title" />
+        <form action="GET" autocomplete="off">
+          <div class="title-and-close">
+            <h2>What's this, what's this?</h2>
+            <i class="fas fa-times close"></i>
+          </div>
+
+          <input type="text" name="title" placeholder="Title" required />
           <input type="text" name="image" placeholder="Image" />
-          <input type="text" name="instructions" placeholder="Instructions" />
-          <input type="text" name="ingredients" placeholder="Ingredients" />
+          <input
+            type="text"
+            name="instructions"
+            placeholder="Instructions (optional)"
+          />
+          <div class="container-ingredients">
+            <input type="text" name="ingredient" placeholder="Ingredient" />
+            <input
+              type="button"
+              value="Add an ingredient"
+              class="add-ingredient"
+            />
+            <div class="ingredients"></div>
+          </div>
+          <input
+            type="password"
+            name="password"
+            placeholder="secret password"
+            autocomplete="new-password"
+            required
+          />
+          <p>
+            the secret password is here to prevent any other person to add a
+            recipe
+          </p>
           <input type="submit" value="Add a recipe" />
         </form>
       </div>
+      <!-- MODAL -->
     </main>
     <script src="./js/loader.js"></script>
     <script src="./js/recettes.js"></script>
+    <script src="./js/modal.js"></script>
     <script src="./js/main.js"></script>
   </body>
 </html>
