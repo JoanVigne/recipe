@@ -9,7 +9,7 @@ async function getRecettes() {
     const response = await fetch("./assets/recettes.json");
     const data = await response.json();
     // creating li's
-    data.bakery.forEach((recette) => {
+    data.forEach((recette) => {
       const li = document.createElement("li");
       const title = document.createElement("h2");
       title.textContent = recette.name;
@@ -29,12 +29,12 @@ async function getRecettes() {
           activeItems[i].classList.remove("active-recipe");
         }
         this.classList.toggle("active-recipe");
-        displayRecipeInfos(data.bakery[i]);
+        displayRecipeInfos(data[i]);
       });
     }
     listItems[0].classList.add("active-recipe");
 
-    displayRecipeInfos(data.bakery[0]);
+    displayRecipeInfos(data[0]);
     return data;
   } catch (error) {
     console.error("Error:", error);
@@ -69,6 +69,20 @@ function displayRecipeInfos(thisRecipe) {
     ingredient.textContent = ingredients[i];
     containerIngredients.appendChild(ingredient);
   }
+  // display micro
+  const containerMacro = document.querySelector(".container-micros");
+  containerMacro.innerHTML = ""; // clear container
+  console.log("macros : ", thisRecipe.micros); // object
+  const micros = thisRecipe.micros;
+
+  const titleMicro = document.createElement("h2");
+  titleMicro.textContent = "Micros per 100g";
+  containerMacro.append(titleMicro);
+  Object.keys(micros).forEach((micro) => {
+    const microItem = document.createElement("li");
+    microItem.textContent = `${micro} : ${micros[micro]}`;
+    containerMacro.appendChild(microItem);
+  });
 }
 function displayImages() {
   const activeItem = listRecettes.querySelector(".active-recipe");
